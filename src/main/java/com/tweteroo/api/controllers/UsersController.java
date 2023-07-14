@@ -13,6 +13,8 @@ import com.tweteroo.api.dto.UserDTO;
 import com.tweteroo.api.models.Users;
 import com.tweteroo.api.services.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/sign-up")
 public class UsersController {
@@ -26,9 +28,8 @@ public class UsersController {
     }
 
     @PostMapping
-    public String createUser(@RequestBody UserDTO req) {
-        String message = userService.createUser(req);
-        return message;
+    public String createUser(@RequestBody @Valid UserDTO req) {
+        return userService.createUser(req);
     }
 
 }
