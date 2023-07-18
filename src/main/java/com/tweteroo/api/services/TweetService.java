@@ -25,6 +25,10 @@ public class TweetService {
         List<Tweets> tweetsListPerPage = new ArrayList<>();
         List<Tweets> tweetsList = tweetRepository.findAll();
 
+        if(page == 0) {
+            return tweetsListPerPage;
+        }
+
         if(page * 5 - 5 > tweetsList.size()) {
             return tweetsListPerPage;
         }

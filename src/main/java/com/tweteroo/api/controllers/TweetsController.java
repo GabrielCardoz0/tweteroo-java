@@ -16,7 +16,7 @@ import com.tweteroo.api.models.Tweets;
 import com.tweteroo.api.services.TweetService;
 
 @RestController
-@RequestMapping("/tweets")
+@RequestMapping("/api/tweets")
 public class TweetsController {
 
     @Autowired
